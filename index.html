@@ -1,964 +1,558 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Central de Atendimento | Informações e Suporte</title>
-<meta name="description" content="Central informativa de atendimento. Consulte informações, orientações e solicite suporte de forma rápida e segura.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Inter', Arial, sans-serif;
-    background: #f6f8fb;
-    color: #202938;
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-header {
-    background: #ffffff;
-    border-bottom: 1px solid #e8edf3;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar {
-    max-width: 1180px;
-    margin: auto;
-    min-height: 76px;
-    padding: 0 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    font-size: 21px;
-    font-weight: 800;
-    color: #173b67;
-}
-
-.logo-icon {
-    width: 39px;
-    height: 39px;
-    border-radius: 10px;
-    background: #1769aa;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-}
-
-.nav-links a {
-    font-size: 14px;
-    font-weight: 600;
-    color: #536174;
-    transition: .2s;
-}
-
-.nav-links a:hover {
-    color: #1769aa;
-}
-
-.nav-button {
-    background: #1769aa;
-    color: white !important;
-    padding: 11px 19px;
-    border-radius: 8px;
-}
-
-.hero {
-    background: linear-gradient(135deg, #edf6ff 0%, #ffffff 65%);
-    padding: 78px 25px 85px;
-}
-
-.hero-container {
-    max-width: 1180px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1.15fr .85fr;
-    align-items: center;
-    gap: 60px;
-}
-
-.badge {
-    display: inline-block;
-    background: #e2f0ff;
-    color: #1769aa;
-    padding: 8px 14px;
-    border-radius: 30px;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: clamp(35px, 5vw, 57px);
-    line-height: 1.08;
-    color: #172b46;
-    margin-bottom: 22px;
-    letter-spacing: -1.5px;
-}
-
-.hero h1 span {
-    color: #1769aa;
-}
-
-.hero p {
-    max-width: 650px;
-    font-size: 17px;
-    color: #617084;
-    margin-bottom: 30px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 13px;
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 23px;
-    border-radius: 9px;
-    font-weight: 700;
-    font-size: 14px;
-    transition: .2s;
-}
-
-.btn-primary {
-    background: #1769aa;
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background: #12598f;
-    transform: translateY(-1px);
-}
-
-.btn-secondary {
-    background: #fff;
-    color: #26384e;
-    border: 1px solid #d8e0e9;
-}
-
-.btn-secondary:hover {
-    border-color: #1769aa;
-    color: #1769aa;
-}
-
-.hero-card {
-    background: #fff;
-    border-radius: 18px;
-    padding: 32px;
-    box-shadow: 0 18px 50px rgba(23, 59, 103, .10);
-    border: 1px solid #e8eef5;
-}
-
-.hero-card-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 13px;
-    background: #eaf4ff;
-    color: #1769aa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-
-.hero-card h3 {
-    color: #1d3048;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.hero-card p {
-    font-size: 14px;
-    margin-bottom: 22px;
-}
-
-.info-list {
-    list-style: none;
-}
-
-.info-list li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    color: #59697d;
-    margin: 13px 0;
-}
-
-.info-list li::before {
-    content: "✓";
-    width: 21px;
-    height: 21px;
-    border-radius: 50%;
-    background: #e8f5ee;
-    color: #20834e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 800;
-}
-
-section {
-    padding: 75px 25px;
-}
-
-.container {
-    max-width: 1180px;
-    margin: auto;
-}
-
-.section-header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 42px;
-}
-
-.section-header span {
-    color: #1769aa;
-    font-size: 13px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.section-header h2 {
-    color: #1b2e46;
-    font-size: 34px;
-    margin: 9px 0 12px;
-}
-
-.section-header p {
-    color: #68778a;
-    font-size: 15px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.card {
-    background: #fff;
-    border: 1px solid #e5eaf0;
-    border-radius: 14px;
-    padding: 28px;
-    transition: .25s;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(20, 50, 80, .08);
-}
-
-.card-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 11px;
-    background: #edf6ff;
-    color: #1769aa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 21px;
-    margin-bottom: 18px;
-}
-
-.card h3 {
-    color: #24374e;
-    font-size: 18px;
-    margin-bottom: 9px;
-}
-
-.card p {
-    color: #68778a;
-    font-size: 14px;
-    margin-bottom: 18px;
-}
-
-.card a {
-    color: #1769aa;
-    font-size: 13px;
-    font-weight: 800;
-}
-
-.about {
-    background: #ffffff;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.about h2 {
-    font-size: 34px;
-    color: #1b2e46;
-    margin: 10px 0 18px;
-}
-
-.about p {
-    color: #68778a;
-    font-size: 15px;
-    margin-bottom: 18px;
-}
-
-.about-box {
-    background: #f5f9fd;
-    border: 1px solid #e2eaf2;
-    border-radius: 16px;
-    padding: 28px;
-}
-
-.about-box-item {
-    display: flex;
-    gap: 14px;
-    padding: 17px 0;
-    border-bottom: 1px solid #e1e7ee;
-}
-
-.about-box-item:last-child {
-    border-bottom: 0;
-}
-
-.about-box-number {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background: #1769aa;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 800;
-    flex-shrink: 0;
-}
-
-.about-box h4 {
-    color: #263950;
-    margin-bottom: 3px;
-}
-
-.about-box p {
-    margin: 0;
-    font-size: 13px;
-}
-
-.faq {
-    background: #f6f8fb;
-}
-
-.faq-list {
-    max-width: 850px;
-    margin: auto;
-}
-
-details {
-    background: #fff;
-    border: 1px solid #e1e7ee;
-    border-radius: 10px;
-    margin-bottom: 12px;
-    padding: 18px 21px;
-}
-
-summary {
-    cursor: pointer;
-    color: #25384f;
-    font-size: 15px;
-    font-weight: 700;
-}
-
-details p {
-    color: #68778a;
-    font-size: 14px;
-    margin-top: 13px;
-    padding-right: 15px;
-}
-
-.contact {
-    background: #173b67;
-    color: #fff;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.contact h2 {
-    font-size: 34px;
-    margin-bottom: 14px;
-}
-
-.contact p {
-    color: #d5e1ee;
-    font-size: 15px;
-}
-
-.contact-card {
-    background: #fff;
-    border-radius: 15px;
-    padding: 27px;
-    color: #25384f;
-}
-
-.contact-option {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 15px 0;
-    border-bottom: 1px solid #e8edf2;
-}
-
-.contact-option:last-child {
-    border-bottom: 0;
-}
-
-.contact-option-icon {
-    width: 43px;
-    height: 43px;
-    border-radius: 9px;
-    background: #edf6ff;
-    color: #1769aa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-option strong {
-    display: block;
-    font-size: 14px;
-}
-
-.contact-option small {
-    color: #738195;
-}
-
-footer {
-    background: #102a47;
-    color: #d7e1eb;
-    padding: 42px 25px 25px;
-}
-
-.footer-grid {
-    max-width: 1180px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 45px;
-    padding-bottom: 30px;
-}
-
-footer h3 {
-    color: #fff;
-    font-size: 17px;
-    margin-bottom: 13px;
-}
-
-footer p,
-footer a {
-    color: #b9c8d8;
-    font-size: 13px;
-}
-
-footer a {
-    display: block;
-    margin: 8px 0;
-}
-
-footer a:hover {
-    color: #fff;
-}
-
-.footer-bottom {
-    max-width: 1180px;
-    margin: auto;
-    border-top: 1px solid rgba(255,255,255,.10);
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.footer-bottom span {
-    font-size: 12px;
-    color: #9eb0c3;
-}
-
-.whatsapp {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    background: #25d366;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 27px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.18);
-    z-index: 999;
-    transition: .2s;
-}
-
-.whatsapp:hover {
-    transform: scale(1.07);
-}
-
-@media (max-width: 850px) {
-
-    .nav-links {
-        display: none;
-    }
-
-    .hero-container,
-    .about-grid,
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        padding-top: 55px;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .hero-card {
-        margin-top: 10px;
-    }
-
-    section {
-        padding: 60px 20px;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .navbar {
-        padding: 0 17px;
-    }
-
-    .logo {
-        font-size: 18px;
-    }
-
-    .hero {
-        padding-left: 18px;
-        padding-right: 18px;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero p {
-        font-size: 15px;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-    }
-
-    .section-header h2,
-    .about h2,
-    .contact h2 {
-        font-size: 28px;
-    }
-
-    .whatsapp {
-        width: 54px;
-        height: 54px;
-        right: 17px;
-        bottom: 17px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERNET SUPORTE - Central de Ajuda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #cc0000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #ff0000;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            font-size: 36px;
+            color: #cc0000;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Serviços */
+        .servicos {
+            background: #f9fafb;
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .servico-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 8px;
+            border-left: 5px solid #ff0000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .servico-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .servico-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+            color: #ff0000;
+        }
+
+        .servico-card h3 {
+            color: #cc0000;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .servico-card p {
+            color: #666;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .servico-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .servico-card .btn-atendimento {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: white;
+            padding: 18px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+        }
+
+        .servico-card .btn-atendimento:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5);
+            background: linear-gradient(135deg, #cc0000 0%, #ff0000 100%);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: white;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            color: #999;
+            font-size: 14px;
+            margin-top: 20px;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #ff0000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin-left: 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            .hero-buttons,
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn,
+            .cta-buttons .btn {
+                width: 100%;
+            }
+
+            .servicos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-    <nav class="navbar">
-        <a href="#inicio" class="logo">
-            <span class="logo-icon">✓</span>
-            Central de Atendimento
-        </a>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="">
+                <img src="logo_clarosuporte.png" alt="INTERNET SUPORTE" style="height: 50px; border-radius: 4px;">
+            </div>
 
-        <div class="nav-links">
-            <a href="#inicio">Início</a>
-            <a href="#servicos">Informações</a>
-            <a href="#duvidas">Dúvidas</a>
-            <a href="#contato" class="nav-button">Atendimento</a>
+            <nav>
+                <a href="#servicos">Serviços</a>
+                <a href="#contato">Contato</a>
+            </nav>
         </div>
-    </nav>
-</header>
+    </header>
 
-<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
 
-<section class="hero" id="inicio">
-    <div class="hero-container">
-
-        <div>
-            <span class="badge">CENTRAL DE INFORMAÇÕES E ATENDIMENTO</span>
-
-            <h1>
-                Informação e suporte de forma
-                <span>simples e acessível.</span>
-            </h1>
+            <h1>Bem-vindo à NetClaro</h1>
 
             <p>
-                Encontre orientações, informações e canais de atendimento
-                para esclarecer dúvidas e solicitar suporte.
+                Solicite fatura ou Resolva sua instabilidade
             </p>
 
             <div class="hero-buttons">
-                <a href="#servicos" class="btn btn-primary">
-                    Consultar informações
+
+                <a href="https://wa.me/5516957827279?text=Olá!%20Gostaria%20de%20iniciar%20um%20atendimento."
+                   class="btn btn-primary">
+                    💬 Falar no WhatsApp Agora
                 </a>
 
-                <a href="#contato" class="btn btn-secondary">
-                    Falar com atendimento
+                <a href="#servicos" class="btn btn-secondary">
+                    Problemas com Internet, fale aqui
                 </a>
+
             </div>
         </div>
+    </section>
 
-        <div class="hero-card">
+    <!-- Falar Com Atendente -->
+    <section class="servicos" id="servicos">
 
-            <div class="hero-card-icon">●</div>
+        <div class="container">
 
-            <h3>Central de atendimento</h3>
+            <h2>Nossos Serviços</h2>
+
+            <div class="servicos-grid">
+
+                <!-- Suporte -->
+                <div class="servico-card">
+
+                    <div class="servico-icon">🎧</div>
+
+                    <h3>Suporte</h3>
+
+                    <p>
+                        Atendimento especializado para resolver seus problemas de forma rápida.
+                    </p>
+
+                    <a href="https://wa.me//5516957827279?text=Olá!%20Preciso%20de%20suporte%20técnico."
+                       class="btn btn-atendimento">
+                        Solicitar Atendimento
+                    </a>
+
+                </div>
+
+                <!-- Internet Lenta -->
+                <div class="servico-card">
+
+                    <div class="servico-icon">📶</div>
+
+                    <h3>Internet Lenta</h3>
+
+                    <p>
+                        Diagnosticamos e resolvemos problemas de velocidade de conexão.
+                    </p>
+
+                    <a href="https://wa.me/5516957827279?text=Olá!%20Minha%20internet%20está%20lenta."
+                       class="btn btn-atendimento">
+                        Solicitar Atendimento
+                    </a>
+
+                </div>
+
+                <!-- Solicitar guia -->
+                <div class="servico-card">
+
+                    <div class="servico-icon">📄</div>
+
+                    <h3>Solicitar guia</h3>
+
+                    <p>
+                        Solicite sua guia de forma rápida e fácil via WhatsApp.
+                    </p>
+
+                    <a href="https://wa.me/5516957827279?text=Olá!%20Gostaria%20de%20solicitar%20minha%20fatura."
+                       class="btn btn-atendimento">
+                        Solicitar Atendimento
+                    </a>
+
+                </div>
+
+                <!-- Outros Assuntos -->
+                <div class="servico-card">
+
+                    <div class="servico-icon">💬</div>
+
+                    <h3>Outros Assuntos</h3>
+
+                    <p>
+                        Fale conosco sobre qualquer tema relacionado aos nossos serviços.
+                    </p>
+
+                    <a href="https://wa.me/5516957827279?text=Olá!%20Tenho%20uma%20dúvida."
+                       class="btn btn-atendimento">
+                        Solicitar Atendimento
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contato">
+
+        <div class="container">
+
+            <h2>Pronto para resolver seu problema?</h2>
 
             <p>
-                Conte com um canal organizado para consultar informações
-                e encontrar orientações sobre atendimento.
+                Clique no botão abaixo e inicie um atendimento via WhatsApp agora mesmo!
             </p>
 
-            <ul class="info-list">
-                <li>Informações gerais</li>
-                <li>Orientações de atendimento</li>
-                <li>Suporte e esclarecimento de dúvidas</li>
-                <li>Canais de contato</li>
-            </ul>
+            <div class="cta-buttons">
 
-        </div>
-
-    </div>
-</section>
-
-<section id="servicos">
-    <div class="container">
-
-        <div class="section-header">
-            <span>Informações</span>
-            <h2>Como podemos ajudar?</h2>
-            <p>
-                Consulte as principais opções de informação e atendimento
-                disponíveis.
-            </p>
-        </div>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="card-icon">i</div>
-                <h3>Informações gerais</h3>
-                <p>
-                    Consulte informações e orientações relacionadas aos
-                    serviços e canais de atendimento.
-                </p>
-                <a href="#contato">SAIBA MAIS →</a>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">?</div>
-                <h3>Esclarecimento de dúvidas</h3>
-                <p>
-                    Encontre orientações para dúvidas frequentes e saiba
-                    como solicitar atendimento.
-                </p>
-                <a href="#duvidas">VER DÚVIDAS →</a>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">↗</div>
-                <h3>Solicitar atendimento</h3>
-                <p>
-                    Entre em contato para receber informações e suporte
-                    conforme sua necessidade.
-                </p>
-                <a href="#contato">ENTRAR EM CONTATO →</a>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<section class="about">
-    <div class="container">
-
-        <div class="about-grid">
-
-            <div>
-                <span style="color:#1769aa;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1px;">
-                    Atendimento
-                </span>
-
-                <h2>
-                    Um espaço criado para facilitar seu acesso à informação.
-                </h2>
-
-                <p>
-                    Nossa central reúne informações de maneira clara e
-                    organizada para facilitar a consulta e o contato com
-                    o atendimento.
-                </p>
-
-                <p>
-                    Caso não encontre a informação desejada, utilize um
-                    dos canais disponíveis para solicitar auxílio.
-                </p>
-
-                <a href="#contato" class="btn btn-primary">
-                    Solicitar atendimento
+                <a href="https://wa.me/5516957827279?text=Olá!%20Gostaria%20de%20iniciar%20um%20atendimento."
+                   class="btn btn-primary">
+                    💬 Iniciar Atendimento
                 </a>
-            </div>
-
-            <div class="about-box">
-
-                <div class="about-box-item">
-                    <div class="about-box-number">1</div>
-                    <div>
-                        <h4>Consulte</h4>
-                        <p>Confira as informações disponíveis na central.</p>
-                    </div>
-                </div>
-
-                <div class="about-box-item">
-                    <div class="about-box-number">2</div>
-                    <div>
-                        <h4>Encontre sua orientação</h4>
-                        <p>Identifique o assunto relacionado à sua dúvida.</p>
-                    </div>
-                </div>
-
-                <div class="about-box-item">
-                    <div class="about-box-number">3</div>
-                    <div>
-                        <h4>Entre em contato</h4>
-                        <p>Utilize o canal de atendimento disponível.</p>
-                    </div>
-                </div>
 
             </div>
 
         </div>
+    </section>
 
-    </div>
-</section>
+    <!-- Footer -->
+    <footer>
 
-<section class="faq" id="duvidas">
-    <div class="container">
+        <div class="footer-content">
 
-        <div class="section-header">
-            <span>Dúvidas frequentes</span>
-            <h2>Perguntas e respostas</h2>
             <p>
-                Confira algumas informações antes de solicitar atendimento.
+                <strong>NETSUPORTE - Central de Ajuda</strong>
             </p>
-        </div>
 
-        <div class="faq-list">
-
-            <details>
-                <summary>Como posso solicitar atendimento?</summary>
-                <p>
-                    Você pode utilizar os canais de contato disponibilizados
-                    nesta página para solicitar informações e suporte.
-                </p>
-            </details>
-
-            <details>
-                <summary>Onde encontro informações sobre atendimento?</summary>
-                <p>
-                    As principais orientações estão disponíveis nesta central.
-                    Caso precise de informações adicionais, entre em contato.
-                </p>
-            </details>
-
-            <details>
-                <summary>Posso esclarecer uma dúvida diretamente com um atendente?</summary>
-                <p>
-                    Sim. Utilize o canal de atendimento disponível na seção
-                    de contato para solicitar auxílio.
-                </p>
-            </details>
-
-            <details>
-                <summary>Quais informações devo fornecer ao atendimento?</summary>
-                <p>
-                    Informe de maneira objetiva o assunto relacionado à sua
-                    solicitação para facilitar o direcionamento do atendimento.
-                </p>
-            </details>
-
-        </div>
-
-    </div>
-</section>
-
-<section class="contact" id="contato">
-    <div class="container">
-
-        <div class="contact-grid">
-
-            <div>
-                <h2>Precisa de atendimento?</h2>
-
-                <p>
-                    Entre em contato através de um dos canais disponíveis.
-                    Nossa central está preparada para receber sua solicitação
-                    e orientar você.
-                </p>
-            </div>
-
-            <div class="contact-card">
-
-                <div class="contact-option">
-                    <div class="contact-option-icon">☎</div>
-                    <div>
-                        <strong>Atendimento</strong>
-                        <small>Consulte os canais disponíveis</small>
-                    </div>
-                </div>
-
-                <div class="contact-option">
-                    <div class="contact-option-icon">✉</div>
-                    <div>
-                        <strong>Informações</strong>
-                        <small>Solicite orientações</small>
-                    </div>
-                </div>
-
-                <div class="contact-option">
-                    <div class="contact-option-icon">✓</div>
-                    <div>
-                        <strong>Suporte</strong>
-                        <small>Fale com nossa equipe de atendimento</small>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-</main>
-
-<footer>
-
-    <div class="footer-grid">
-
-        <div>
-            <h3>Central de Atendimento</h3>
             <p>
-                Portal informativo desenvolvido para facilitar o acesso
-                a informações, orientações e canais de atendimento.
+                Estamos aqui para ajudar você 24/7
             </p>
+
         </div>
 
-        <div>
-            <h3>Links</h3>
-            <a href="#inicio">Início</a>
-            <a href="#servicos">Informações</a>
-            <a href="#duvidas">Dúvidas frequentes</a>
-            <a href="#contato">Atendimento</a>
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 NETSUPORTE. Todos os direitos reservados.
+            </p>
+
         </div>
 
-        <div>
-            <h3>Informações</h3>
-            <a href="#">Política de Privacidade</a>
-            <a href="#">Termos de Uso</a>
-            <a href="#">Política de Cookies</a>
-        </div>
+    </footer>
 
-    </div>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5516957827279?text=Olá!%20Gostaria%20de%20iniciar%20um%20atendimento."
+       class="whatsapp-btn"
+       title="Fale conosco no WhatsApp">
+        💬
+    </a>
 
-    <div class="footer-bottom">
-        <span>© 2026 Central de Atendimento. Todos os direitos reservados.</span>
-        <span>Site informativo</span>
-    </div>
+    <script>
 
-</footer>
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-<!-- BOTÃO FLUTUANTE DE ATENDIMENTO -->
-<a
-    href="#contato"
-    class="whatsapp"
-    aria-label="Solicitar atendimento"
-    title="Solicitar atendimento"
->
-    ☎
-</a>
+            anchor.addEventListener('click', function (e) {
+
+                e.preventDefault();
+
+                const target = document.querySelector(
+                    this.getAttribute('href')
+                );
+
+                if (target) {
+
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                }
+
+            });
+
+        });
+
+    </script>
 
 </body>
 </html>
-```
